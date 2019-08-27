@@ -90,7 +90,7 @@ public class MetaRingSpringBootApplication implements ApplicationContextAware {
         l.stream().distinct().forEach(list::add);
         SPRING_APPLICATION = new SpringApplication(list.toArray(new Class<?>[list.size()]));
         try {
-            SPRING_APPLICATION.setDefaultProperties(ObjectUtil.toProperties(Tools.FACTORY_DATA_REPRESENTATION.create().add(CFG_SPRING, Core.SYSKB.get(CFG_EXT).get(CFG_SPRING))));
+            SPRING_APPLICATION.setDefaultProperties(ObjectUtil.toProperties(Tools.FACTORY_DATA_REPRESENTATION.create().add(CFG_SPRING, Core.SYSKB.get(CFG_EXT).get(CFG_SPRING)).merge(Core.SYSKB.get(CFG_EXT).get(CFG_SPRING))));
         } catch(Exception e) {
         }
         SPRING_APPLICATION.run(args);
