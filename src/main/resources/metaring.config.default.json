@@ -1,0 +1,10 @@
+{
+  "ext": {
+    "spring": {
+      "banner": {
+        "charset": "UTF-8",
+        "location": "classpath:metaring_banner.txt"
+      }
+    }
+  }
+}
